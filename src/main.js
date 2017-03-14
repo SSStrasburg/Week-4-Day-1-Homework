@@ -7,7 +7,7 @@ let promise = fetch ('https://api.github.com/users/'+process.argv[2],
   method:'GET',
   headers: {
     Authorization: 'token ' + process.argv[3]
-  },
+  }
 } );
 
 promise.then( function handleResponse( responseObject ){
@@ -71,20 +71,19 @@ let promise2 = fetch(
           }
 
           if (repo.stargazers_count > secondMaxStarGazerMax && repo.stargazers_count < maxStarGazerMax) {
-            console.log("ILKAJSLKDJ:LAKSDJ:LKAJD:LJDA:LKJAD:LKJA:LKJ:LKAJDS")
             secondMaxStarGazerMax = repo.stargazers_count;
             secondMaxStarGazerFileName = repo.name;
             secondMaxStarGazerUserName = repo.owner.login;
           }
         });
 
-        console.log( 'line 73 maxStarGazerMax', maxStarGazerMax );
-        console.log( 'line 74 maxStarGazerFileName', maxStarGazerFileName );
-        console.log( 'line 75 maxStarGazerUserName', maxStarGazerUserName );
+        console.log( 'maxStarGazerMax', maxStarGazerMax );
+        console.log( 'maxStarGazerFileName', maxStarGazerFileName );
+        console.log( 'maxStarGazerUserName', maxStarGazerUserName );
 
-        console.log('line 93 secondMaxStarGazerMax', secondMaxStarGazerMax);
-        console.log('line 94 secondMaxStarGazerFileName', secondMaxStarGazerFileName);
-        console.log('line 95 secondMaxStarGazerUserName', secondMaxStarGazerUserName);
+        console.log('secondMaxStarGazerMax', secondMaxStarGazerMax);
+        console.log('secondMaxStarGazerFileName', secondMaxStarGazerFileName);
+        console.log('secondMaxStarGazerUserName', secondMaxStarGazerUserName);
 
 
         //
