@@ -106,4 +106,27 @@ let promise2 = fetch(
     }
 
 
-  } );
+    let promise3 = fetch('https://api.github.com/repos/' + process.argv[2] + '/' + each.name + '/contributors',{ //checks the users
+      method: 'GET',
+      headers: {
+        Authorization: 'token ' + process.argv[3]
+      }
+    }
+  );
+
+  promise3.then(function handleResponse(responseObject){
+    if(responseObject.status > 199 && responseObject.status < 300 {
+      responseObject.json().then(function contributors(contributorsData){ //gets login for contributors
+        if(contributorsData[0].login !== 'ssstrasburg'){
+          i++; let contributorsName = contributorsData[0].login;
+          console.log('contributors ' + i + ':', contributorsName);
+          contributorsLogin.push(contributorsName);
+        }
+          console.log(contributorsData[0].login);
+      });
+    }) else {
+      console.log('Error:', responseObject.status);
+    }
+  });
+
+  });
